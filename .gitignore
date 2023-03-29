@@ -151,3 +151,5 @@ yatube_api/posts/static/
 
 # миграции
 posts/migrations
+
+Makefile
