@@ -75,9 +75,9 @@ offset - номер страницы после которой начинать 
     # Тело запроса
 
     {
-    "text": "string",
-    "image": "string",
-    "group": 0
+        "text": "string",
+        "image": "string",
+        "group": 0
     }
 ```
 
@@ -141,8 +141,8 @@ offset - номер страницы после которой начинать 
     # Тело запроса
 
 {
-"username": "string",
-"password": "string"
+    "username": "string",
+    "password": "string"
 }
 ```
 
