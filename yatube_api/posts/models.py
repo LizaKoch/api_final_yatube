@@ -63,11 +63,11 @@ class Follow(models.Model):
         related_name='follower',
         on_delete=models.CASCADE,
     )
-    author = models.ForeignKey(
+    following = models.ForeignKey(
         User,
         related_name='following',
         on_delete=models.CASCADE,
     )
 
     def __str__(self) -> str:
-        return self.author
+        return self.following

@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from api.views import CommentViewSet, GroupViewSet, PostViewSet
+from api.views import APIFollowList, CommentViewSet, GroupViewSet, PostViewSet
 
 router = routers.DefaultRouter()
 router.register(
@@ -14,4 +14,5 @@ router.register('groups', GroupViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('follow/', APIFollowList.as_view()),
 ]
