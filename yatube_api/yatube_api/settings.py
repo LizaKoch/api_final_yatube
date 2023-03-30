@@ -1,6 +1,5 @@
-from pathlib import Path
-
 from datetime import timedelta
+from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,6 +19,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'api',
+    'djoser',
     'posts',
 ]
 
@@ -60,7 +60,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -106,4 +106,3 @@ SIMPLE_JWT = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

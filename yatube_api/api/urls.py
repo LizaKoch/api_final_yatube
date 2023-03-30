@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
-from api.views import CommentViewSet, PostViewSet
 
+from api.views import CommentViewSet, GroupViewSet, PostViewSet
 
 router = routers.DefaultRouter()
 router.register(
@@ -10,6 +10,7 @@ router.register(
     basename='comments',
 )
 router.register('posts', PostViewSet)
+router.register('groups', GroupViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

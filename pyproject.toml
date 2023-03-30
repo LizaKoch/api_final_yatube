@@ -9,3 +9,6 @@ addopts = "-vv -p no:cacheprovider"
 testpaths = "tests/"
 python_files = "test_*.py"
 
+[tool.isort]
+profile = "black"
+src_paths = "yatube_api"
