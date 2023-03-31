@@ -21,10 +21,10 @@
 1. Установите python версии 3.9 и выше.
 1. Клонируйте репозиторий и перейдите в него в командной строке:
 
-```bash
-git clone https://github.com/LizaKoch/api_final_yatube.git && \
-cd api_final_yatube
-```
+    ```bash
+    git clone https://github.com/LizaKoch/api_final_yatube.git && \
+    cd api_final_yatube
+    ```
 
 1. Создайте вертуальное окружение и установите зависимости (пример команд на linux/mac):
 
