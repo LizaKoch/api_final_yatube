@@ -28,30 +28,30 @@ cd api_final_yatube
 
 1. Создайте вертуальное окружение и установите зависимости (пример команд на linux/mac):
 
-```bash
-python3 -m venv venv && \ 
-    source venv/bin/activate && \
-    python3 -m pip install --upgrade pip && \
-    pip install -r requirements.txt
-```
+    ```bash
+    python3 -m venv venv && \ 
+        source venv/bin/activate && \
+        python3 -m pip install --upgrade pip && \
+        pip install -r requirements.txt
+    ```
 
 1. Выполните миграции:
 
-```bash
-python3 yatube_api/manage.py migrate
-```
+    ```bash
+    python3 yatube_api/manage.py migrate
+    ```
 
 1. Создайте superuser:
 
-```bash
-python3 manage.py createsuperuser
-```
+    ```bash
+    python3 manage.py createsuperuser
+    ```
 
 1. Запустите проект:
 
-```bash
-python3 manage.py runserver
-```
+    ```bash
+    python3 manage.py runserver
+    ```
 
 ## **Примеры запросов API**
 
