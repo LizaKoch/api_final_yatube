@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404
+from django.utils.functional import cached_property
 from rest_framework import filters, generics, permissions, viewsets
 
-from api.permissions import AuthorHasChangePermission, ReadOnly
+from api.permissions import AuthorHasChangePermission
 from api.serializers import (
     CommentSerializer,
     FollowSerializer,
@@ -34,19 +35,19 @@ class CommentViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = CommentSerializer
 
-    def get_post(self, pk: int):
-        return get_object_or_404(Post, pk=pk)
-
     def get_queryset(self):
-        return self.get_post(pk=self.kwargs.get('post_id')).comments
+        return self._post.comments.all()
 
     def perform_create(self, serializer):
-        post = self.get_post(pk=self.kwargs.get('post_id'))
-        serializer.save(author=self.request.user, post=post)
+        serializer.save(author=self.request.user, post=self._post)
+
+    @cached_property
+    def _post(self):
+        return get_object_or_404(Post, pk=self.kwargs.get('post_id'))
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
-    permission_classes = (ReadOnly,)
+    permission_classes = []
     serializer_class = GroupSerializer
     queryset = Group.objects.all()
 

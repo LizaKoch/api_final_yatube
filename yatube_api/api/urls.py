@@ -13,6 +13,8 @@ router.register('posts', PostViewSet)
 router.register('groups', GroupViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('follow/', APIFollowList.as_view()),
+    path('v1/', include(router.urls)),
+    path('v1/follow/', APIFollowList.as_view()),
+    path('v1/', include('djoser.urls')),
+    path('v1/', include('djoser.urls.jwt')),
 ]

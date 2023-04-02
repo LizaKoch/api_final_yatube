@@ -5,6 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'hhz7l-ltdismtf@bzyz+rple7*s*w$jak%whj@(@u0eok^f9k4'
 
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -17,13 +18,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'djoser',
     'rest_framework',
     'rest_framework.authtoken',
-    'djoser',
+
     'api',
     'posts',
 ]
 # fmt: on
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
