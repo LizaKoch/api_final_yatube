@@ -1,6 +1,10 @@
 [tool.djlint]
 indent = 2
 
+[tool.isort]
+profile = 'black'
+src_paths = 'yatube_api'
+
 [tool.pytest.ini_options]
 python_paths = 'yatube_api/'
 DJANGO_SETTINGS_MODULE = 'yatube_api.settings'
@@ -8,8 +12,3 @@ norecursedirs = 'env/*'
 addopts = '-vv -p no:cacheprovider'
 testpaths = 'tests/'
 python_files = 'test_*.py'
-
-[tool.isort]
-profile = 'black'
-src_paths = 'yatube_api'
-
