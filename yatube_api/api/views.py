@@ -62,3 +62,28 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
+
+
+class ProfileList(generics.ListAPIView):
+    serializer_class = PostSerializer
+    permission_classes = (
+        permissions.IsAuthenticatedOrReadOnly,
+        AuthorHasChangePermission,
+    )
+
+    def get_queryset(self):
+        username = self.kwargs['username']
+        return Post.objects.filter(author__username=username)
+
+
+class Test500Error(generics.ListAPIView):
+    """For status code 500."""
+    serializer_class = PostSerializer
+    permission_classes = (
+        permissions.IsAuthenticatedOrReadOnly,
+        AuthorHasChangePermission,
+    )
+
+    def get_queryset(self):
+        username = self.qweqwe['username']
+        return Post.objects.filter(author__username=username)

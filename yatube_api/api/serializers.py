@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.validators import UniqueTogetherValidator
+from drf_extra_fields.fields import Base64ImageField
+
 
 from posts.models import Comment, Follow, Group, Post, User
 
@@ -71,10 +73,13 @@ class FollowSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     author = SlugRelatedField(read_only=True, slug_field='username')
+    image = Base64ImageField(required=False, allow_null=True)
+    title = serializers.CharField(min_length=3)
 
     class Meta:
         fields = (
             'id',
+            'title',
             'text',
             'author',
             'image',
